@@ -180,7 +180,7 @@ CREATE TABLE course_prerequisites (
 ) ENGINE=InnoDB;
 
 -- -----------------------------------------------------
--- AUDIT LOG (optional)
+-- AUDIT LOG
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS audit_logs;
 CREATE TABLE audit_logs (
@@ -203,7 +203,7 @@ CREATE INDEX idx_enrollments_student ON enrollments(student_id);
 CREATE INDEX idx_enrollments_offering ON enrollments(offering_id);
 
 -- -----------------------------------------------------
--- Example seed data (optional) - uncomment to insert sample rows
+-- Example seed data 
 -- -----------------------------------------------------
 
 INSERT INTO departments (name, code, description) VALUES
@@ -211,8 +211,8 @@ INSERT INTO departments (name, code, description) VALUES
   ('Mathematics', 'MATH', 'Mathematics department');
 
 INSERT INTO instructors (first_name,last_name,email,department_id) VALUES
-  ('Alice','Smith','alice.smith@example.edu',1),
-  ('Bob','Jones','bob.jones@example.edu',2);
+  ('Benson','Murage','benson.murage@gmail.edu',1),
+  ('Joseph','Kamau','joseph.kamau@gmail.edu',2);
 
 INSERT INTO courses (code,title,credits,department_id) VALUES
   ('CS101','Intro to Computer Science',3,1),
@@ -226,8 +226,8 @@ INSERT INTO course_offerings (course_id,semester_id,section,capacity,location,sc
   (2,1,'A',60,'Room 201','Tue/Thu 10:00-11:30');
 
 INSERT INTO students (registration_number,first_name,last_name,email,enrolled_date) VALUES
-  ('REG2025001','John','Doe','john.doe@example.edu','2025-09-01'),
-  ('REG2025002','Jane','Roe','jane.roe@example.edu','2025-09-01');
+  ('REG2025001','Lynn','Wambui','lynn.wambui@gmail.edu','2025-09-01'),
+  ('REG2025002','Sheila','Wangari','sheila.wangari@gmail.edu','2025-09-01');
 
 -- Enroll John into CS101 offering
 INSERT INTO enrollments (student_id, offering_id, status) VALUES (1,1,'enrolled');
